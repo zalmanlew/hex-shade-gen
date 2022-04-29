@@ -1,0 +1,16 @@
+{
+  "name": "hex-shade-gen",
+  "version": "1.0.0",
+  "description": "easily generate shade(s) of any given hex color - vanilla js",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zalmanlew/hex-shade-gen.git"
+  },
+  "author": "Zalman Lew",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zalmanlew/hex-shade-gen/issues"
+  },
+  "homepage": "https://github.com/zalmanlew/hex-shade-gen#readme"
+}
