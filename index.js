@@ -1,12 +1,6 @@
-function shadeColor(color, offset) {
-  // default color
-  color = color || "007aff";
-
-  // default offset (one shade darker)
-  offset = offset || -1;
-
-  //normalize color
-  color = color.replace("#", "").substr(0, 6).toLowerCase().split("");
+function shadeColor(color = "007aff", offset = -1) {
+  // normalize color and split to array
+  let chars = color.replace("#", "").substr(0, 6).toLowerCase().split("");
 
   // ordered hex values
   const _hex = [
@@ -27,9 +21,10 @@ function shadeColor(color, offset) {
     "e",
     "f",
   ];
+
   let new_color = "#";
 
-  color.forEach(function (char) {
+  chars.forEach(function (char) {
     let index = _hex.indexOf(char) + (offset || 0);
 
     // if the index would cause this color to go 'out of bounds' then we leave that char as is
@@ -39,6 +34,7 @@ function shadeColor(color, offset) {
     if (index < 0) {
       index = 0;
     }
+    
     new_color += _hex[index];
   });
 
