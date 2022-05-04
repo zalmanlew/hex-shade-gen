@@ -1,13 +1,18 @@
 body {
   background-color: #34343c;
+  color: #f0f0f0;
+  font-family: monospace;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .color {
@@ -17,12 +22,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 1rem;
+  margin: 10px 20px;
 }
-.color>p{
+
+.color > p {
   line-height: 180px;
   font-family: monospace;
   font-size: 32px;
+}
+
+.color-label {
+  width: 180px;
+  text-align: center;
+  margin: 0 1rem;
 }
 
 #old {
