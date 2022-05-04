@@ -25,6 +25,12 @@ body {
   font-size: 32px;
 }
 
-#old {}
+#old {
+  background-color: #007aff;
+  color: #33adff;
+}
 
-#new {}
+#new {
+  background-color: #0069ee;
+  color: #339cff;
+}

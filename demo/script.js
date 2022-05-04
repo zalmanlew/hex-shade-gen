@@ -1,8 +1,5 @@
 old_obj = document.getElementById("old");
-old_obj_txt = document.getElementById("old-text");
-
 new_obj = document.getElementById("new");
-new_obj_txt = document.getElementById("new-text");
 
 // starting color - random
 color = "#000000".replace(/0/g, function () {
@@ -17,19 +14,25 @@ color = "#000000".replace(/0/g, function () {
  */
 
 function reColor(color) {
-  color = shadeColor(color, 0); // normalize
+  old_color = shadeColor(color, 0); // normalize
+  new_color = shadeColor(old_color, -1); // TODO: number controlled by user
 
-  old_obj.style.backgroundColor = color;
-  old_obj_txt.style.color = shadeColor(color, 3); // text color
-  old_obj_txt.innerText = color;
+  Object.assign(old_obj.style, {
+    backgroundColor: old_color,
+    color: shadeColor(old_color, 3),
+  });
 
-  new_color = shadeColor(color, -1); // TODO: number controlled by user
+  Object.assign(new_obj.style, {
+    backgroundColor: new_color,
+    color: shadeColor(new_color, 3),
+  });
 
-  new_obj.style.backgroundColor = new_color;
-  new_obj_txt.style.color = shadeColor(new_color, 3);
-  new_obj_txt.innerText = new_color;  // text color
+  // set text to color of the text
+  old_obj.firstChild.innerText = old_color;
+  new_obj.firstChild.innerText = new_color;
 
   navigator.clipboard.writeText(new_color); //  TODO: don't copy on init run
+  console.log({ old_color }, { new_color });
 }
 
 // recolor on page load
@@ -41,6 +44,6 @@ document.addEventListener("paste", (event) => {
   if (paste.match(/^#?[0-9A-F]{6}$/i)) {
     reColor(paste);
   } else {
-    return;
+    console.log(`pasted string is not a color:\n\t${paste}`);
   }
 });
