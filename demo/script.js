@@ -13,7 +13,7 @@ function copyToClipboard(o) {
   navigator.clipboard.writeText(o.firstChild.innerText);
 }
 
-// starting color - random
+// starting color - randomly generated
 color = "#000000".replace(/0/g, function () {
   return (~~(Math.random() * 16)).toString(16);
 });
