@@ -16,6 +16,21 @@
       <div class="color" id="old"><p id="old-text"></p></div>
       <div class="color" id="new"><p id="new-text"></p></div>
     </div>
+    <div class="container">
+      <label>Shade Level</label>
+    </div>
+    <div class="container shade-level-slider">
+      <input
+        id="slider"
+        name="shade"
+        type="range"
+        min="-5"
+        max="5"
+        value="-1"
+        oninput="this.nextElementSibling.value = this.value; reColor(new_obj.firstChild.innerText,false)"
+      />
+      <output id="slider-val">-1</output>
+    </div>
   </body>
 </html>
 <script src="../index.js"></script>

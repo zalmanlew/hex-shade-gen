@@ -23,6 +23,11 @@ body {
   justify-content: center;
   align-items: center;
   margin: 10px 20px;
+  cursor: grab;
+}
+
+.color:active {
+  cursor: grabbing;
 }
 
 .color > p {
@@ -51,3 +56,13 @@ label {
   font-size: 20px;
 }
 
+.shade-level-slider {
+  padding: 8px;
+}
+
+#slider-val {
+  min-width: 2rem;
+  font-variant-numeric: tabular-nums;
+  font-size: 18px;
+  padding-left: 5px;
+}
