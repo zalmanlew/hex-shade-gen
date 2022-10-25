@@ -13,10 +13,9 @@ function copyToClipboard(o) {
   navigator.clipboard.writeText(o.firstChild.innerText);
 }
 
-// starting color - randomly generated
-color = "#000000".replace(/0/g, function () {
-  return (~~(Math.random() * 16)).toString(16);
-});
+function randomColor() {
+  return `#${Math.floor(Math.random() * 0xffffff).toString(16)}`;
+}
 
 /* TODO
  * message indicating the new color is copied to clipboard
@@ -49,7 +48,7 @@ function reColor(color, copy = true) {
 }
 
 // recolor on page load - without copying to clipboard
-reColor(color, (copy = false));
+reColor(randomColor(), (copy = false));
 
 // listen for pasted colors and recolor boxes on paste
 document.addEventListener("paste", (event) => {
